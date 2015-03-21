@@ -1,0 +1,16 @@
+[
+{
+  "modid": "magicalmages",
+  "name": "Magical Mages",
+  "description": "Magic and... stuff!",
+  "version": "1.0",
+  "mcversion": "1.8",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["wolfboyft"],
+  "credits": "The_SlayerMC, Essence of the Gods.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

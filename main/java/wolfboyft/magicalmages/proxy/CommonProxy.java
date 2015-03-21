@@ -1,0 +1,7 @@
+package wolfboyft.magicalmages.proxy;
+
+public class CommonProxy {
+	public void registerRenders() {
+		
+	}
+}
