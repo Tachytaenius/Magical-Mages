@@ -49,10 +49,8 @@ public class ModItemHelper extends Item {
 	}
 
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, String sound, boolean damage, ItemStack item, int dam) {
-		if(!w.isRemote){
 			w.spawnEntityInWorld(entity);
 			if(damage) item.damageItem(dam, p);
-		}
 	}
 
 	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound) {
