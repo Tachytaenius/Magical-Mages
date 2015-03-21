@@ -21,14 +21,5 @@ public class EventHooks {
 				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherBone, 13)));
 				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.skull, 2, 1)));
 				}
-		
-		if(event.entity instanceof EntitySkeleton){
-			if(true){
-			event.drops.clear();
-			event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherBone, 2)));
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.skull, 1, 1)));
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherRib, 6)));
-			}
-		}
 	}
 }

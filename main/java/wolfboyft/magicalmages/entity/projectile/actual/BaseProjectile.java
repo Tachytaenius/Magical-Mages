@@ -42,6 +42,6 @@ public class BaseProjectile extends EntityThrowable {
 	}
 
 	protected float getGravityVelocity() {
-		return 0.001F;
+		return 0.01F;
 	}
 }
