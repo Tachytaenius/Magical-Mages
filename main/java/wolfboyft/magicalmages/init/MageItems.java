@@ -4,22 +4,29 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import wolfboyft.magicalmages.MagicalMages;
 import wolfboyft.magicalmages.Reference;
 import wolfboyft.magicalmages.entity.projectile.actual.WitherBolt;
 import wolfboyft.magicalmages.misc.Staves;
 
 public class MageItems {
 	public static final Item staffWither = new Staves("staffWither", 0, 7, true, WitherBolt.class);
+	public static final Item witherBone = new Item().setUnlocalizedName("witherBone").setCreativeTab(MagicalMages.tabMod);
+	public static final Item witherRib = new Item().setUnlocalizedName("witherRib").setCreativeTab(MagicalMages.tabMod);
 	
 	public static void init(){
 	}
 	
 	public static void register(){
 		GameRegistry.registerItem(staffWither, staffWither.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(witherBone, witherBone.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(witherRib, witherRib.getUnlocalizedName().substring(5));
 	}
 	
 	public static void registerRenders(){
 		registerRender(staffWither);
+		registerRender(witherBone);
+		registerRender(witherRib);
 	}
 	
 	public static void registerRender(Item item){

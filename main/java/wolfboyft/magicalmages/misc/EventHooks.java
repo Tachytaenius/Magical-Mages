@@ -7,6 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import wolfboyft.magicalmages.init.MageItems;
 
 public class EventHooks {
 	@SubscribeEvent
@@ -14,22 +15,19 @@ public class EventHooks {
 		if(event.entity instanceof EntityWither){
 			event.drops.clear();
 			event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.nether_star, 14)));
-			if (event.entityLiving.isBurning()){
 				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.diamond, 6)));
-			}else{
 				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.golden_apple, 6)));
+				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherRib, 6)));
+				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherBone, 13)));
+				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.skull, 2, 1)));
 				}
-			}
 		
 		if(event.entity instanceof EntitySkeleton){
 			if(true){
 			event.drops.clear();
-			event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.nether_star, 14)));
-			if (event.entityLiving.isBurning()){
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.diamond, 6)));
-			}else{
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.golden_apple, 6)));
-				}
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherBone, 2)));
+				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.skull, 1, 1)));
+				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherRib, 6)));
 			}
 		}
 	}
