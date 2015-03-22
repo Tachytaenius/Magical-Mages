@@ -15,7 +15,7 @@ import wolfboyft.magicalmages.proxy.CommonProxy;
 public class MagicalMages {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
+	public static MagicalMages instance;
 	public static final ModTab tabMod = new ModTab("tabMod");
 	
 	EventHooks eventhooksVar = new EventHooks();
