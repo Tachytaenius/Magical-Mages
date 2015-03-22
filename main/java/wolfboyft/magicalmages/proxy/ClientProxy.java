@@ -11,6 +11,6 @@ public class ClientProxy extends CommonProxy{
 	@Override
 	public void registerRenders() {;
 		MageItems.registerRenders();
-		RenderingRegistry.registerEntityRenderingHandler(WitherBolt.class, new RenderBaseProjectile(new ResourceLocation("magicalmages:textures/misc/WitherBolt.png"), 1.0F, 0.5F, 0.5F, 0.5F));
-	}
+		RenderingRegistry.registerEntityRenderingHandler(WitherBolt.class, new RenderBaseProjectile(new ResourceLocation("magicalmages:textures/misc/WitherBolt.png"), 1F, 1F, 1F, 1F));
+		}
 }

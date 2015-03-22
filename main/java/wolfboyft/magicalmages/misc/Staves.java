@@ -28,8 +28,10 @@ public class Staves extends ModItemHelper {
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 			try {
+
 						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
 						stack.damageItem(1, player);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
