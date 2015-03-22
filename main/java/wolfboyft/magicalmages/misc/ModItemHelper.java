@@ -10,30 +10,30 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
 
-
 public class ModItemHelper extends Item {
 
 	protected int healAmount = 0;
 
-	public ModItemHelper(String name){
+	public ModItemHelper(String name) {
 		this(name, MagicalMages.tabMod);
 	}
 
-	public ModItemHelper(String name, CreativeTabs tab){
+	public ModItemHelper(String name, CreativeTabs tab) {
 		setUnlocalizedName(name);
 		setCreativeTab(tab);
 		GameRegistry.registerItem(this, name);
 	}
 
-	public ModItemHelper setHealAmount(int healAmount){
+	public ModItemHelper setHealAmount(int healAmount) {
 		this.healAmount = healAmount;
 		return this;
 	}
 
 	@Override
-	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		if(healAmount != 0){
-			if(player.getHealth() < player.getMaxHealth()){
+	public ItemStack onItemRightClick(ItemStack stack, World world,
+			EntityPlayer player) {
+		if (healAmount != 0) {
+			if (player.getHealth() < player.getMaxHealth()) {
 				player.heal(healAmount);
 				player.inventory.consumeInventoryItem(this);
 			}
@@ -41,19 +41,26 @@ public class ModItemHelper extends Item {
 		return stack;
 	}
 
-	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound, boolean damage, ItemStack item, int dam) {
-			if(magic) w.spawnEntityInWorld(entity);
-		if(magic) {
-			if(damage) item.damageItem(dam, p);
+	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity,
+			boolean magic, String sound, boolean damage, ItemStack item, int dam) {
+		if (magic)
+			w.spawnEntityInWorld(entity);
+		if (magic) {
+			if (damage)
+				item.damageItem(dam, p);
 		}
 	}
 
-	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, String sound, boolean damage, ItemStack item, int dam) {
-			w.spawnEntityInWorld(entity);
-			if(damage) item.damageItem(dam, p);
+	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity,
+			String sound, boolean damage, ItemStack item, int dam) {
+		w.spawnEntityInWorld(entity);
+		if (damage)
+			item.damageItem(dam, p);
 	}
 
-	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity, boolean magic, String sound) {
-		spawnEntityIntoWorld(w, p, entity, magic, sound, false, new ItemStack(Items.apple), 0);
+	public void spawnEntityIntoWorld(World w, EntityPlayer p, Entity entity,
+			boolean magic, String sound) {
+		spawnEntityIntoWorld(w, p, entity, magic, sound, false, new ItemStack(
+				Items.apple), 0);
 	}
 }

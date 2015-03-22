@@ -12,9 +12,10 @@ public class Staves extends ModItemHelper {
 	protected int usage;
 	protected int damage;
 	protected boolean unBreakable;
-	protected Class<? extends BaseProjectile> projectile; 
-	
-	public Staves(String name, int uses, int dam, boolean unbreakable, Class<? extends BaseProjectile> projectile) {
+	protected Class<? extends BaseProjectile> projectile;
+
+	public Staves(String name, int uses, int dam, boolean unbreakable,
+			Class<? extends BaseProjectile> projectile) {
 		super(name);
 		this.projectile = projectile;
 		damage = dam;
@@ -26,15 +27,18 @@ public class Staves extends ModItemHelper {
 	}
 
 	@Override
-	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-			try {
+	public ItemStack onItemRightClick(ItemStack stack, World world,
+			EntityPlayer player) {
+		try {
 
-						world.spawnEntityInWorld(projectile.getConstructor(World.class, EntityLivingBase.class, float.class).newInstance(world, player, damage));
-						stack.damageItem(1, player);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			world.spawnEntityInWorld(projectile.getConstructor(World.class,
+					EntityLivingBase.class, float.class).newInstance(world,
+					player, damage));
+			stack.damageItem(1, player);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return stack;
 	}
 }

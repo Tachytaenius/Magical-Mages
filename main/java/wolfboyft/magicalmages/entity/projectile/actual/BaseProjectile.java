@@ -16,19 +16,20 @@ public class BaseProjectile extends EntityThrowable {
 		super(var1);
 	}
 
-	public <AccelerationX> BaseProjectile(World var1, EntityLivingBase var3, float dam) {
+	public <AccelerationX> BaseProjectile(World var1, EntityLivingBase var3,
+			float dam) {
 		super(var1, var3);
 		damage = dam;
 	}
-	
+
 	public float getDamage() {
 		return damage;
 	}
-	
+
 	public void setDamage(float damage) {
 		this.damage = damage;
 	}
-	
+
 	@Override
 	public void onUpdate() {
 		Random rand = new Random();
@@ -37,8 +38,11 @@ public class BaseProjectile extends EntityThrowable {
 
 	@Override
 	protected void onImpact(MovingObjectPosition var1) {
-		if(var1.entityHit != null) var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), damage);
-		if(!worldObj.isRemote) this.setDead();
+		if (var1.entityHit != null)
+			var1.entityHit.attackEntityFrom(
+					DamageSource.causeThrownDamage(this, getThrower()), damage);
+		if (!worldObj.isRemote)
+			this.setDead();
 	}
 
 	protected float getGravityVelocity() {

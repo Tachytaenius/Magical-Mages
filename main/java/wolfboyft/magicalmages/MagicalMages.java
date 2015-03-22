@@ -17,24 +17,22 @@ public class MagicalMages {
 	public static CommonProxy proxy;
 	public static MagicalMages instance;
 	public static final ModTab tabMod = new ModTab("tabMod");
-	
+
 	EventHooks eventhooksVar = new EventHooks();
+
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		MageItems.init();
 		MageItems.register();
 		MinecraftForge.EVENT_BUS.register(eventhooksVar);
 	}
-	
+
 	@EventHandler
-	public void Init(FMLInitializationEvent event)
-	{
+	public void Init(FMLInitializationEvent event) {
 		proxy.registerRenders();
 	}
-	
+
 	@EventHandler
-	public void PostInit(FMLPostInitializationEvent event)
-	{
+	public void PostInit(FMLPostInitializationEvent event) {
 	}
 }

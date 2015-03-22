@@ -11,15 +11,31 @@ import wolfboyft.magicalmages.init.MageItems;
 
 public class EventHooks {
 	@SubscribeEvent
-	public void LivingDropEvent(LivingDropsEvent event){
-		if(event.entity instanceof EntityWither){
+	public void LivingDropEvent(LivingDropsEvent event) {
+		if (event.entity instanceof EntityWither) {
 			event.drops.clear();
-			event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.nether_star, 14)));
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.diamond, 6)));
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.golden_apple, 6)));
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherRib, 6)));
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(MageItems.witherBone, 13)));
-				event.drops.add(new EntityItem(event.entityLiving.worldObj,event.entityLiving.posX,event.entityLiving.posY,event.entityLiving.posZ,new ItemStack(Items.skull, 2, 1)));
-				}
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,
+					event.entityLiving.posX, event.entityLiving.posY,
+					event.entityLiving.posZ, new ItemStack(Items.nether_star,
+							14)));
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,
+					event.entityLiving.posX, event.entityLiving.posY,
+					event.entityLiving.posZ, new ItemStack(Items.diamond, 6)));
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,
+					event.entityLiving.posX, event.entityLiving.posY,
+					event.entityLiving.posZ, new ItemStack(Items.golden_apple,
+							6)));
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,
+					event.entityLiving.posX, event.entityLiving.posY,
+					event.entityLiving.posZ, new ItemStack(MageItems.witherRib,
+							6)));
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,
+					event.entityLiving.posX, event.entityLiving.posY,
+					event.entityLiving.posZ, new ItemStack(
+							MageItems.witherBone, 13)));
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,
+					event.entityLiving.posX, event.entityLiving.posY,
+					event.entityLiving.posZ, new ItemStack(Items.skull, 2, 1)));
+		}
 	}
 }
