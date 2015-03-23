@@ -2,7 +2,6 @@ package wolfboyft.magicalmages.entity.projectile.actual;
 
 import java.util.Random;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -34,29 +33,26 @@ public class WitherBolt extends BaseProjectile {
 	@Override
 	protected void onImpact(MovingObjectPosition var1) {
 		if (var1.entityHit != null) {
-			if (var1.entityHit == getThrower()) {
-
-			} else {
-
-				var1.entityHit.attackEntityFrom(
-						DamageSource.causeThrownDamage(this, getThrower()),
-						getDamage());
-				if (!worldObj.isRemote) {
-					worldObj.createExplosion(this, posX, posY, posZ, 1.0F, true);
-					this.setDead();
-					((EntityLivingBase) var1.entityHit)
-							.addPotionEffect(new PotionEffect(Potion.wither.id,
-									200));
-					this.setDead();
-				}
+			if (!(var1.entityHit instanceof EntityLivingBase)) {
+				this.setDead();
+				worldObj.removeEntity(this);
+				return;
 			}
 		} else {
-			if (worldObj.equals(((Entity) var1.entityHit))) {
+			if (var1.entityHit == getThrower()) {
 				this.setDead();
+				worldObj.removeEntity(this);
+				return;
+			}
+			var1.entityHit.attackEntityFrom(
+					DamageSource.causeThrownDamage(this, getThrower()),
+					getDamage());
+			if (!worldObj.isRemote) {
+				worldObj.createExplosion(this, posX, posY, posZ, 1.0F, true);
+				this.setDead();
+				((EntityLivingBase) var1.entityHit)
+						.addPotionEffect(new PotionEffect(Potion.wither.id, 200));
 			}
 		}
-
-		if (!worldObj.isRemote)
-			this.setDead();
 	}
 }
