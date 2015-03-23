@@ -37,7 +37,6 @@ public class WitherBolt extends BaseProjectile {
 				this.setDead();
 				worldObj.removeEntity(this);
 				return;
-			}
 		} else {
 			if (var1.entityHit == getThrower()) {
 				this.setDead();
