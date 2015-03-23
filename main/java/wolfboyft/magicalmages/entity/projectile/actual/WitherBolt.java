@@ -37,20 +37,22 @@ public class WitherBolt extends BaseProjectile {
 				this.setDead();
 				worldObj.removeEntity(this);
 				return;
-		} else {
-			if (var1.entityHit == getThrower()) {
-				this.setDead();
-				worldObj.removeEntity(this);
-				return;
-			}
-			var1.entityHit.attackEntityFrom(
-					DamageSource.causeThrownDamage(this, getThrower()),
-					getDamage());
-			if (!worldObj.isRemote) {
-				worldObj.createExplosion(this, posX, posY, posZ, 1.0F, true);
-				this.setDead();
-				((EntityLivingBase) var1.entityHit)
-						.addPotionEffect(new PotionEffect(Potion.wither.id, 200));
+			} else {
+				if (var1.entityHit == getThrower()) {
+					this.setDead();
+					worldObj.removeEntity(this);
+					return;
+				}
+				var1.entityHit.attackEntityFrom(
+						DamageSource.causeThrownDamage(this, getThrower()),
+						getDamage());
+				if (!worldObj.isRemote) {
+					worldObj.createExplosion(this, posX, posY, posZ, 1.0F, true);
+					this.setDead();
+					((EntityLivingBase) var1.entityHit)
+							.addPotionEffect(new PotionEffect(Potion.wither.id,
+									200));
+				}
 			}
 		}
 	}
