@@ -7,20 +7,19 @@ import net.minecraft.world.World;
 import wolfboyft.magicalmages.MagicalMages;
 import wolfboyft.magicalmages.entity.projectile.actual.BaseProjectile;
 
-public class Staves extends ModItemHelper {
+public class ThrowableWeapon extends ModItemHelper {
 
 	protected int usage;
 	protected int damage;
 	protected boolean unBreakable;
 	protected Class<? extends BaseProjectile> projectile;
 
-	public Staves(String name, int uses, int dam, boolean unbreakable,
+	public ThrowableWeapon(String name, int dam,
 			Class<? extends BaseProjectile> projectile) {
 		super(name);
 		this.projectile = projectile;
 		damage = dam;
-		setMaxDamage(uses);
-		setMaxStackSize(1);
+		setMaxStackSize(64);
 		setCreativeTab(MagicalMages.tabMod);
 		setUnlocalizedName(name);
 	}
@@ -28,17 +27,21 @@ public class Staves extends ModItemHelper {
 	@Override
 	public ItemStack onItemRightClick(ItemStack stack, World world,
 			EntityPlayer player) {
-		player.swingItem();
-		player.setItemInUse(stack, 3);
 		try {
+			player.swingItem();
 			world.spawnEntityInWorld(projectile.getConstructor(World.class,
 					EntityLivingBase.class, float.class).newInstance(world,
 					player, damage));
-			stack.damageItem(1, player);
-
+			if (!(player.capabilities.isCreativeMode)) {
+				--stack.stackSize;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return stack;
+	}
+
+	public void onUpdate() {
+
 	}
 }

@@ -3,7 +3,6 @@ package wolfboyft.magicalmages.misc;
 import net.minecraft.entity.EntityList;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import wolfboyft.magicalmages.MagicalMages;
-import wolfboyft.magicalmages.entity.mob.boss.actual.HallowMaster;
 
 public class _wolfboyftUtils {
 	public static int mobID = 6755, projectileID = 7755, entityListID = 8755;
