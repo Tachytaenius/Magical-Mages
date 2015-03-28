@@ -30,13 +30,8 @@ public class ClientProxy extends CommonProxy {
 								1F, 1F, 1F));
 		RenderingRegistry.registerEntityRenderingHandler(MagicShuriken.class,
 				new RenderBaseProjectile(new ResourceLocation(
-						"magicalmages:textures/misc/shuriken.png"), 1F, 1F, 1F,
-						1F));
-		RenderingRegistry
-				.registerEntityRenderingHandler(MagicKunai.class,
-						new RenderBaseProjectile(new ResourceLocation(
-								"magicalmages:textures/misc/kunai.png"), 1F,
-								1F, 1F, 1F));
+		RenderingRegistry.registerEntityRenderingHandler(MagicKunai.class,
+				new RenderBaseProjectile(new ResourceLocation(
 	}
 
 }

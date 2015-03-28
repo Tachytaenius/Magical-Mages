@@ -13,12 +13,13 @@ import wolfboyft.magicalmages.entity.projectile.actual.MagicKunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicShuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.Shuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.WitherBolt;
+import wolfboyft.magicalmages.misc.EnumArmour;
 import wolfboyft.magicalmages.misc.Staves;
 import wolfboyft.magicalmages.misc.ThrowableWeapon;
 
 public class MageItems {
-	public static final Item staffWither = new Staves("staffWither", 0, 7,
-			true, WitherBolt.class);
+	public static final Item staffWither = new Staves("staffWither", 1000, 7,
+			false, WitherBolt.class);
 	public static final Item witherBone = new Item().setUnlocalizedName(
 			"witherBone").setCreativeTab(MagicalMages.tabMod);
 	public static final Item witherRib = new Item().setUnlocalizedName(
@@ -31,11 +32,23 @@ public class MageItems {
 			"magicShuriken", 20, MagicShuriken.class);
 	public static final Item magicKunai = new ThrowableWeapon("magicKunai", 16,
 			MagicKunai.class);
+	public static Item witherHelmet;
+	public static Item witherChest;
+	public static Item witherLegs;
+	public static Item witherBoots;
+	public static Item ninjaHelmet;
+	public static Item ninjaChest;
+	public static Item ninjaLegs;
+	public static Item ninjaBoots;
 
 	public static void init() {
 	}
 
 	public static void register() {
+		int HEAD = Armours.HEAD;
+		int BODY = Armours.BODY;
+		int LEGS = Armours.LEGS;
+		int BOOTS = Armours.BOOTS;
 		GameRegistry.registerItem(witherBone, witherBone.getUnlocalizedName()
 				.substring(5));
 		GameRegistry.registerItem(witherRib, witherRib.getUnlocalizedName()
@@ -49,12 +62,40 @@ public class MageItems {
 				"ACA", 'A', Items.diamond, 'B', kunai, 'C', Items.emerald);
 		GameRegistry.addRecipe(new ItemStack(magicShuriken, 8), "ACA", "CBC",
 				"ACA", 'A', Items.diamond, 'B', shuriken, 'C', Items.emerald);
+		witherHelmet = new Armours(EnumArmour.WITHER, HEAD);
+		witherChest = new Armours(EnumArmour.WITHER, BODY);
+		witherLegs = new Armours(EnumArmour.WITHER, LEGS);
+		witherBoots = new Armours(EnumArmour.WITHER, BOOTS);
+		GameRegistry.addRecipe(new ItemStack(witherHelmet, 1), "AAA", "A A",
+				'A', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(witherChest, 1), "A A", "AAA",
+				"AAA", 'A', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(witherLegs, 1), "AAA", "A A",
+				"A A", 'A', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(witherBoots, 1), "A A", "A A",
+				'A', Items.nether_star);
+		ninjaHelmet = new Armours(EnumArmour.NINJA, HEAD);
+		ninjaChest = new Armours(EnumArmour.NINJA, BODY);
+		ninjaLegs = new Armours(EnumArmour.NINJA, LEGS);
+		ninjaBoots = new Armours(EnumArmour.NINJA, BOOTS);
 	}
 
 	public static void registerRenders() {
 		registerRender(staffWither);
 		registerRender(witherBone);
 		registerRender(witherRib);
+		registerRender(shuriken);
+		registerRender(kunai);
+		registerRender(magicShuriken);
+		registerRender(magicKunai);
+		registerRender(witherHelmet);
+		registerRender(witherChest);
+		registerRender(witherLegs);
+		registerRender(witherBoots);
+		registerRender(ninjaHelmet);
+		registerRender(ninjaChest);
+		registerRender(ninjaLegs);
+		registerRender(ninjaBoots);
 	}
 
 	public static void registerRender(Item item) {

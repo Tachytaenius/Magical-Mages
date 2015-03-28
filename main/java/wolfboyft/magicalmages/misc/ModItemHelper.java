@@ -1,12 +1,15 @@
 package wolfboyft.magicalmages.misc;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
 
@@ -62,5 +65,16 @@ public class ModItemHelper extends Item {
 			boolean magic, String sound) {
 		spawnEntityIntoWorld(w, p, entity, magic, sound, false, new ItemStack(
 				Items.apple), 0);
+	}
+
+	public static ArmorMaterial addArmorMaterial(String name, int durability,
+			int[] oldArmor, int enchantability) {
+		int duraNew = (int) Math.round(durability / 13.75);
+		return EnumHelper.addArmorMaterial(name, name, duraNew, oldArmor,
+				enchantability);
+	}
+
+	public static Item toItem(Block block) {
+		return Item.getItemFromBlock(block);
 	}
 }
