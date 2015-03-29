@@ -47,7 +47,7 @@ public class MagicKunai extends BaseProjectile {
 				var1.entityHit.attackEntityFrom(
 						DamageSource.causeThrownDamage(this, getThrower()),
 						getDamage());
-				worldObj.createExplosion(this, posX, posY, posZ, 0.8F, true);
+				worldObj.createExplosion(this, posX, posY, posZ, 0F, true);
 				if (!worldObj.isRemote) {
 					this.setDead();
 				}
@@ -64,7 +64,37 @@ public class MagicKunai extends BaseProjectile {
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					new int[] { Item.getIdFromItem(MageItems.kunai) });
-			worldObj.createExplosion(this, posX, posY, posZ, 0.8F, true);
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			worldObj.createExplosion(this, posX, posY, posZ, 0F, true);
 		}
 	}
 

@@ -47,7 +47,7 @@ public class MagicShuriken extends BaseProjectile {
 				var1.entityHit.attackEntityFrom(
 						DamageSource.causeThrownDamage(this, getThrower()),
 						getDamage());
-				worldObj.createExplosion(this, posX, posY, posZ, 0.2F, true);
+				worldObj.createExplosion(this, posX, posY, posZ, 0F, true);
 				if (!worldObj.isRemote) {
 					this.setDead();
 				}
@@ -64,7 +64,37 @@ public class MagicShuriken extends BaseProjectile {
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					new int[] { Item.getIdFromItem(MageItems.shuriken) });
-			worldObj.createExplosion(this, posX, posY, posZ, 1F, true);
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.shuriken) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.shuriken) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.shuriken) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.shuriken) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.shuriken) });
+			worldObj.createExplosion(this, posX, posY, posZ, 0F, true);
 		}
 	}
 
