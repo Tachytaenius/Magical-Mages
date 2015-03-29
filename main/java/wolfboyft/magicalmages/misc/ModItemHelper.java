@@ -10,7 +10,6 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
 
 public class ModItemHelper extends Item {
@@ -22,9 +21,6 @@ public class ModItemHelper extends Item {
 	}
 
 	public ModItemHelper(String name, CreativeTabs tab) {
-		setUnlocalizedName(name);
-		setCreativeTab(tab);
-		GameRegistry.registerItem(this, name);
 	}
 
 	public ModItemHelper setHealAmount(int healAmount) {

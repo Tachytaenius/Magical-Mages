@@ -2,12 +2,13 @@ package wolfboyft.magicalmages.misc;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import wolfboyft.magicalmages.MagicalMages;
 import wolfboyft.magicalmages.entity.projectile.actual.BaseProjectile;
 
-public class ThrowableWeapon extends ModItemHelper {
+public class ThrowableWeapon extends Item {
 
 	protected int usage;
 	protected int damage;
@@ -16,12 +17,12 @@ public class ThrowableWeapon extends ModItemHelper {
 
 	public ThrowableWeapon(String name, int dam,
 			Class<? extends BaseProjectile> projectile) {
-		super(name);
+		super();
 		this.projectile = projectile;
 		damage = dam;
-		setMaxStackSize(64);
-		setCreativeTab(MagicalMages.tabMod);
 		setUnlocalizedName(name);
+		setMaxStackSize(1);
+		setCreativeTab(MagicalMages.tabMod);
 	}
 
 	@Override
