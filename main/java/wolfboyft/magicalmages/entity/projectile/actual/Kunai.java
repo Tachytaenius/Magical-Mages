@@ -63,6 +63,20 @@ public class Kunai extends BaseProjectile {
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			this.playSound("dig.stone", 1, 2);
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			this.playSound("dig.stone", 1, 2);
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
 		}
 	}
 

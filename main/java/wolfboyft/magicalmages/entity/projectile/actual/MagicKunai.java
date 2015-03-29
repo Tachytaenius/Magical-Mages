@@ -47,7 +47,7 @@ public class MagicKunai extends BaseProjectile {
 				var1.entityHit.attackEntityFrom(
 						DamageSource.causeThrownDamage(this, getThrower()),
 						getDamage());
-				worldObj.createExplosion(this, posX, posY, posZ, 2.0F, true);
+				worldObj.createExplosion(this, posX, posY, posZ, 0.8F, true);
 				if (!worldObj.isRemote) {
 					this.setDead();
 				}
@@ -63,8 +63,8 @@ public class MagicKunai extends BaseProjectile {
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
 					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					new int[] { Item.getIdFromItem(MageItems.shuriken) });
-			worldObj.createExplosion(this, posX, posY, posZ, 2.0F, true);
+					new int[] { Item.getIdFromItem(MageItems.kunai) });
+			worldObj.createExplosion(this, posX, posY, posZ, 0.8F, true);
 		}
 	}
 
