@@ -1,6 +1,7 @@
 package wolfboyft.magicalmages.misc;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -10,9 +11,8 @@ public enum EnumArmour {
 	WITHER(ModItemHelper.addArmorMaterial("wither", 1000, new int[] { 4, 8, 6,
 			4 }, 20), "wither", false, 80, Items.nether_star),
 
-	NINJA(ModItemHelper.addArmorMaterial("ninja", 1000,
-			new int[] { 2, 4, 3, 2 }, 20), "ninja", false, 100,
-			Items.nether_star);
+	NINJA(ModItemHelper.addArmorMaterial("ninja", 250,
+			new int[] { 2, 4, 3, 2 }, 20), "ninja", false, 100, Blocks.wool);
 
 	private ArmorMaterial armorMaterial;
 	private String type;

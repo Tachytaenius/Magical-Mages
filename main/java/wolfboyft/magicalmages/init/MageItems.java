@@ -66,14 +66,14 @@ public class MageItems {
 		witherChest = new Armours(EnumArmour.WITHER, BODY);
 		witherLegs = new Armours(EnumArmour.WITHER, LEGS);
 		witherBoots = new Armours(EnumArmour.WITHER, BOOTS);
-		GameRegistry.addRecipe(new ItemStack(witherHelmet, 1), "AAA", "A A",
-				'A', Items.nether_star);
-		GameRegistry.addRecipe(new ItemStack(witherChest, 1), "A A", "AAA",
-				"AAA", 'A', Items.nether_star);
-		GameRegistry.addRecipe(new ItemStack(witherLegs, 1), "AAA", "A A",
-				"A A", 'A', Items.nether_star);
-		GameRegistry.addRecipe(new ItemStack(witherBoots, 1), "A A", "A A",
-				'A', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(witherHelmet, 1), "AAA", "ABA",
+				'A', witherBone, 'B', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(witherChest, 1), "ABA", "AAA",
+				"AAA", 'A', witherBone, 'B', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(witherLegs, 1), "AAA", "ABA",
+				"A A", 'A', witherBone, 'B', Items.nether_star);
+		GameRegistry.addRecipe(new ItemStack(witherBoots, 1), "ABA", "A A",
+				'A', witherBone, 'B', Items.nether_star);
 		ninjaHelmet = new Armours(EnumArmour.NINJA, HEAD);
 		ninjaChest = new Armours(EnumArmour.NINJA, BODY);
 		ninjaLegs = new Armours(EnumArmour.NINJA, LEGS);
