@@ -1,5 +1,19 @@
 item.staffWither.name=Wither Staff
 item.witherRib.name=Wither Rib
 item.witherBone.name=Wither Bone
+item.shuriken.name=Shuriken
+item.kunai.name=Kunai
+item.magicShuriken.name=Super Shuriken
+item.magicKunai.name=Super Kunai
+item.witherHelmet.name=Wither Helmet
+item.witherBody.name=Wither Chestplate
+item.witherLegs.name=Wither Leggings
+item.witherBoots.name=Wither Boots
+item.ninjaHelmet.name=Ninja Mask
+item.ninjaBody.name=Ninja Tunic
+item.ninjaLegs.name=Ninja Leggings
+item.ninjaBoots.name=Ninja Boots
+
+tile.witherCore.name=Wither Core
 
 itemGroup.tabMod=Magical Mages

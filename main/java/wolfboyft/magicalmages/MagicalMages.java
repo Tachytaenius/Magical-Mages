@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import wolfboyft.magicalmages.init.MageBlocks;
 import wolfboyft.magicalmages.init.MageItems;
 import wolfboyft.magicalmages.misc.EventHooks;
 import wolfboyft.magicalmages.proxy.CommonProxy;
@@ -24,6 +25,8 @@ public class MagicalMages {
 	public void preInit(FMLPreInitializationEvent event) {
 		MageItems.init();
 		MageItems.register();
+		MageBlocks.init();
+		MageBlocks.register();
 		MinecraftForge.EVENT_BUS.register(eventhooksVar);
 	}
 
