@@ -19,27 +19,19 @@ import wolfboyft.magicalmages.misc.ThrowableWeapon;
 
 public class MageItems {
 	public static final Item staffWither = new Staves("staffWither", 1000, 7,
-			false, WitherBolt.class).setMaxDamage(1000).setMaxStackSize(64)
-			.setCreativeTab(MagicalMages.tabMod)
-			.setUnlocalizedName("staffWither");
+			false, WitherBolt.class);
 	public static final Item witherBone = new Item().setUnlocalizedName(
 			"witherBone").setCreativeTab(MagicalMages.tabMod);
 	public static final Item witherRib = new Item().setUnlocalizedName(
 			"witherRib").setCreativeTab(MagicalMages.tabMod);
 	public static final Item shuriken = new ThrowableWeapon("shuriken", 5,
-			Shuriken.class).setMaxStackSize(64)
-			.setCreativeTab(MagicalMages.tabMod).setUnlocalizedName("shuriken");
+			Shuriken.class);
 	public static final Item kunai = new ThrowableWeapon("kunai", 4,
-			Kunai.class).setMaxStackSize(64)
-			.setCreativeTab(MagicalMages.tabMod).setUnlocalizedName("kunai");
+			Kunai.class);
 	public static final Item magicShuriken = new ThrowableWeapon(
-			"magicShuriken", 20, MagicShuriken.class).setMaxStackSize(64)
-			.setCreativeTab(MagicalMages.tabMod)
-			.setUnlocalizedName("magicShuriken");
+			"magicShuriken", 20, MagicShuriken.class);
 	public static final Item magicKunai = new ThrowableWeapon("magicKunai", 16,
-			MagicKunai.class).setMaxStackSize(64)
-			.setCreativeTab(MagicalMages.tabMod)
-			.setUnlocalizedName("magicKunai");
+			MagicKunai.class);
 	public static Item witherHelmet;
 	public static Item witherChest;
 	public static Item witherLegs;
@@ -54,36 +46,20 @@ public class MageItems {
 		int BODY = Armours.BODY;
 		int LEGS = Armours.LEGS;
 		int BOOTS = Armours.BOOTS;
-		witherHelmet = new Armours(EnumArmour.WITHER, HEAD).setUnlocalizedName(
-				"witherHelmet").setCreativeTab(MagicalMages.tabMod);
-		witherChest = new Armours(EnumArmour.WITHER, BODY).setUnlocalizedName(
-				"witherBody").setCreativeTab(MagicalMages.tabMod);
-		witherLegs = new Armours(EnumArmour.WITHER, LEGS).setUnlocalizedName(
-				"witherLegs").setCreativeTab(MagicalMages.tabMod);
-		witherBoots = new Armours(EnumArmour.WITHER, BOOTS).setUnlocalizedName(
-				"witherBoots").setCreativeTab(MagicalMages.tabMod);
-		ninjaHelmet = new Armours(EnumArmour.NINJA, HEAD).setUnlocalizedName(
-				"ninjaHelmet").setCreativeTab(MagicalMages.tabMod);
-		ninjaChest = new Armours(EnumArmour.NINJA, BODY).setUnlocalizedName(
-				"ninjaBody").setCreativeTab(MagicalMages.tabMod);
-		ninjaLegs = new Armours(EnumArmour.NINJA, LEGS).setUnlocalizedName(
-				"ninjaLegs").setCreativeTab(MagicalMages.tabMod);
-		ninjaBoots = new Armours(EnumArmour.NINJA, BOOTS).setUnlocalizedName(
-				"ninjaBoots").setCreativeTab(MagicalMages.tabMod);
+		witherHelmet = new Armours(EnumArmour.WITHER, HEAD);
+		witherChest = new Armours(EnumArmour.WITHER, BODY);
+		witherLegs = new Armours(EnumArmour.WITHER, LEGS);
+		witherBoots = new Armours(EnumArmour.WITHER, BOOTS);
+		ninjaHelmet = new Armours(EnumArmour.NINJA, HEAD);
+		ninjaChest = new Armours(EnumArmour.NINJA, BODY);
+		ninjaLegs = new Armours(EnumArmour.NINJA, LEGS);
+		ninjaBoots = new Armours(EnumArmour.NINJA, BOOTS);
 	}
 
 	public static void register() {
 		GameRegistry.registerItem(witherBone, witherBone.getUnlocalizedName()
 				.substring(5));
 		GameRegistry.registerItem(witherRib, witherRib.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(shuriken, shuriken.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(kunai, kunai.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(magicShuriken, magicShuriken
-				.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(magicKunai, magicKunai.getUnlocalizedName()
 				.substring(5));
 		GameRegistry.addRecipe(new ItemStack(staffWither, 1), "CBC", " A ",
 				" D ", 'A', witherBone, 'B', Items.nether_star, 'C', witherRib,
@@ -102,24 +78,6 @@ public class MageItems {
 				"A A", 'A', witherBone, 'B', Items.nether_star);
 		GameRegistry.addRecipe(new ItemStack(witherBoots, 1), "ABA", "A A",
 				'A', witherBone, 'B', Items.nether_star);
-		GameRegistry.registerItem(ninjaHelmet, ninjaHelmet.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(ninjaChest, ninjaChest.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(ninjaLegs, ninjaLegs.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(ninjaBoots, ninjaBoots.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(witherHelmet, witherHelmet
-				.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(witherChest, witherChest.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(witherBoots, witherBoots.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(witherLegs, witherLegs.getUnlocalizedName()
-				.substring(5));
-		GameRegistry.registerItem(staffWither, staffWither.getUnlocalizedName()
-				.substring(5));
 	}
 
 	public static void registerRenders() {
