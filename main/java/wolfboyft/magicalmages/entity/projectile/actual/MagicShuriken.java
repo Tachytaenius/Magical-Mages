@@ -48,6 +48,7 @@ public class MagicShuriken extends BaseProjectile {
 						DamageSource.causeThrownDamage(this, getThrower()),
 						getDamage());
 				worldObj.createExplosion(this, posX, posY, posZ, 0F, true);
+				this.setDead();
 				if (!worldObj.isRemote) {
 					this.setDead();
 				}
