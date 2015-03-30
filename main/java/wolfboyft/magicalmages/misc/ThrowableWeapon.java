@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
 import wolfboyft.magicalmages.entity.projectile.actual.BaseProjectile;
 
@@ -23,6 +24,7 @@ public class ThrowableWeapon extends Item {
 		setUnlocalizedName(name);
 		setMaxStackSize(1);
 		setCreativeTab(MagicalMages.tabMod);
+		GameRegistry.registerItem(this, name);
 	}
 
 	@Override
