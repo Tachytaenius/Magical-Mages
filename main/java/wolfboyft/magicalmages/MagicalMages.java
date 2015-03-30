@@ -18,6 +18,7 @@ public class MagicalMages {
 	public static CommonProxy proxy;
 	public static MagicalMages instance;
 	public static final ModTab tabMod = new ModTab("tabMod");
+	public static int dimensionId = 273;
 
 	EventHooks eventhooksVar = new EventHooks();
 
@@ -33,6 +34,7 @@ public class MagicalMages {
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
 		proxy.registerRenders();
+
 	}
 
 	@EventHandler
