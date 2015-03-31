@@ -24,8 +24,8 @@ public class MageItems {
 	public static final Item witherBone = new Item().setUnlocalizedName(
 			"witherBone").setCreativeTab(MagicalMages.tabMod);
 	public static final Item witherTeleporter = new DimensionalTransit(
-			MagicalMages.dimensionId).setUnlocalizedName("witherTeleporter")
-			.setCreativeTab(MagicalMages.tabMod);
+			"witherTeleporter", MagicalMages.dimensionId).setUnlocalizedName(
+			"witherTeleporter").setCreativeTab(MagicalMages.tabMod);
 	public static final Item witherRib = new Item().setUnlocalizedName(
 			"witherRib").setCreativeTab(MagicalMages.tabMod);
 	public static final Item shuriken = new ThrowableWeapon("shuriken", 5,
