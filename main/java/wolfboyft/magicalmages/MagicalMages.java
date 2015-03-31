@@ -1,5 +1,6 @@
 package wolfboyft.magicalmages;
 
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -7,6 +8,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import wolfboyft.magicalmages.dimension.witherlands.WorldProviderWitherlands;
 import wolfboyft.magicalmages.init.MageBlocks;
 import wolfboyft.magicalmages.init.MageItems;
 import wolfboyft.magicalmages.misc.EventHooks;
@@ -35,7 +37,9 @@ public class MagicalMages {
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
 		proxy.registerRenders();
-
+		DimensionManager.registerProviderType(dimensionId,
+				WorldProviderWitherlands.class, false);
+		DimensionManager.registerDimension(dimensionId, dimensionId);
 	}
 
 	@EventHandler
