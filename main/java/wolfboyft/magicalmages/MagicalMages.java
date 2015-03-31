@@ -11,6 +11,8 @@ import wolfboyft.magicalmages.init.MageBlocks;
 import wolfboyft.magicalmages.init.MageItems;
 import wolfboyft.magicalmages.misc.EventHooks;
 import wolfboyft.magicalmages.proxy.CommonProxy;
+import wolfboyft.magicalmages.world.biome.BiomeRegistry;
+import wolfboyft.magicalmages.world.biome.WorldTypeMage;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class MagicalMages {
@@ -31,6 +33,7 @@ public class MagicalMages {
 		MageBlocks.init();
 		MageBlocks.register();
 		MinecraftForge.EVENT_BUS.register(eventhooksVar);
+		BiomeRegistry.mainRegistry();
 	}
 
 	@EventHandler
@@ -40,5 +43,6 @@ public class MagicalMages {
 
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event) {
+		WorldTypeMage MAGE = new WorldTypeMage(3, "mage");
 	}
 }

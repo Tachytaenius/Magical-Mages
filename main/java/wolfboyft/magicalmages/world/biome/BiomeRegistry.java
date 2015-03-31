@@ -9,7 +9,7 @@ public class BiomeRegistry {
 
 	public static BiomeGenBase biomeWitherlands;
 
-	public static void MainClass() {
+	public static void mainRegistry() {
 		initializeBiome();
 		registerBiome();
 	}
@@ -20,7 +20,7 @@ public class BiomeRegistry {
 	}
 
 	private static void initializeBiome() {
-		biomeWitherlands = new BiomeGenWitherlands(484)
-				.setBiomeName("Witherlands");
+		biomeWitherlands = new BiomeGenWitherlands(25).setBiomeName(
+				"Witherlands").setTemperatureRainfall(1.2F, 0.9F);
 	}
 }
