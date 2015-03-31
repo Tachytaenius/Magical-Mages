@@ -24,6 +24,7 @@ public class MagicalMages {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		//Sytheren was here
 		MageItems.init();
 		MageItems.register();
 		MageBlocks.init();
