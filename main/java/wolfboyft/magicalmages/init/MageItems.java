@@ -13,15 +13,19 @@ import wolfboyft.magicalmages.entity.projectile.actual.MagicKunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicShuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.Shuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.WitherBolt;
+import wolfboyft.magicalmages.items.DimensionalTransit;
+import wolfboyft.magicalmages.items.Staves;
+import wolfboyft.magicalmages.items.ThrowableWeapon;
 import wolfboyft.magicalmages.misc.EnumArmour;
-import wolfboyft.magicalmages.misc.Staves;
-import wolfboyft.magicalmages.misc.ThrowableWeapon;
 
 public class MageItems {
 	public static final Item staffWither = new Staves("staffWither", 1000, 7,
 			false, WitherBolt.class);
 	public static final Item witherBone = new Item().setUnlocalizedName(
 			"witherBone").setCreativeTab(MagicalMages.tabMod);
+	public static final Item witherTeleporter = new DimensionalTransit(
+			MagicalMages.dimensionId).setUnlocalizedName("witherTeleporter")
+			.setCreativeTab(MagicalMages.tabMod);
 	public static final Item witherRib = new Item().setUnlocalizedName(
 			"witherRib").setCreativeTab(MagicalMages.tabMod);
 	public static final Item shuriken = new ThrowableWeapon("shuriken", 5,
@@ -59,6 +63,8 @@ public class MageItems {
 	public static void register() {
 		GameRegistry.registerItem(witherBone, witherBone.getUnlocalizedName()
 				.substring(5));
+		GameRegistry.registerItem(witherTeleporter, witherTeleporter
+				.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(witherRib, witherRib.getUnlocalizedName()
 				.substring(5));
 		GameRegistry.addRecipe(new ItemStack(staffWither, 1), "CBC", " A ",

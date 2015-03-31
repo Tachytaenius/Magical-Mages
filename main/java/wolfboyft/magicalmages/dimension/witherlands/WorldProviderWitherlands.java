@@ -19,7 +19,8 @@ public class WorldProviderWitherlands extends WorldProvider {
 	}
 
 	public IChunkProvider createChunkGenerator() {
-		return new ChunkProviderWitherlands(worldObj, worldObj.getSeed(), true);
+		return new ChunkProviderWitherlands(worldObj, worldObj.getSeed(), true,
+				null);
 	}
 
 	@Override

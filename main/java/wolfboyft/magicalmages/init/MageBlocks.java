@@ -36,8 +36,6 @@ public class MageBlocks {
 				.substring(5));
 		GameRegistry.registerBlock(witherRock, witherRock.getUnlocalizedName()
 				.substring(5));
-		GameRegistry.registerBlock(witherPortalFrame, witherPortalFrame
-				.getUnlocalizedName().substring(5));
 		GameRegistry.addRecipe(new ItemStack(witherCore, 1), "AAA", "AAA",
 				"AAA", 'A', Items.nether_star);
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.nether_star, 9),

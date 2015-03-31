@@ -1,4 +1,4 @@
-package wolfboyft.magicalmages.misc;
+package wolfboyft.magicalmages.items;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
