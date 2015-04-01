@@ -40,6 +40,7 @@ public class MageBlocks {
 				"AAA", 'A', Items.nether_star);
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.nether_star, 9),
 				new Object[] { new ItemStack(witherCore) });
+
 	}
 
 	public static void RegisterRenders() {

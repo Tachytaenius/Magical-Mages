@@ -1,4 +1,4 @@
-package wolfboyft.magicalmages.world.biome;
+package wolfboyft.magicalmages.world.biome.witherlands;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
@@ -10,17 +10,19 @@ public class BiomeRegistry {
 	public static BiomeGenBase biomeWitherlands;
 
 	public static void mainRegistry() {
-		initializeBiome();
 		registerBiome();
+		initializeBiome();
 	}
 
 	private static void registerBiome() {
-		BiomeDictionary.registerBiomeType(biomeWitherlands, Type.SPOOKY);
+		BiomeDictionary.registerBiomeType(biomeWitherlands, Type.SPOOKY,
+				Type.COLD, Type.DEAD);
 		BiomeManager.addSpawnBiome(biomeWitherlands);
 	}
 
 	private static void initializeBiome() {
-		biomeWitherlands = new BiomeGenWitherlands(25).setBiomeName(
-				"Witherlands").setTemperatureRainfall(1.2F, 0.9F);
+		biomeWitherlands = new BiomeGenWitherlands(52)
+				.setBiomeName("Witherlands").setTemperatureRainfall(0F, 0F)
+				.setColor(0x1f0000).setDisableRain();
 	}
 }

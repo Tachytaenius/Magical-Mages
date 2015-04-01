@@ -1,4 +1,4 @@
-package wolfboyft.magicalmages.world.biome;
+package wolfboyft.magicalmages.world.biome.witherlands;
 
 import net.minecraft.world.biome.BiomeGenBase;
 
