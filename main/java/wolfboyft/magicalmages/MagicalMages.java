@@ -11,6 +11,7 @@ import wolfboyft.magicalmages.init.MageBlocks;
 import wolfboyft.magicalmages.init.MageItems;
 import wolfboyft.magicalmages.misc.EventHooks;
 import wolfboyft.magicalmages.proxy.CommonProxy;
+import wolfboyft.magicalmages.world.biome.witherlands.BiomeRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class MagicalMages {
@@ -31,11 +32,13 @@ public class MagicalMages {
 		MageBlocks.init();
 		MageBlocks.register();
 		MinecraftForge.EVENT_BUS.register(eventhooksVar);
+		MinecraftForge.TERRAIN_GEN_BUS.register(eventhooksVar);
 	}
 
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
 		proxy.registerRenders();
+		BiomeRegistry.mainRegistry();
 	}
 
 	@EventHandler

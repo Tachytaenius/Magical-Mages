@@ -7,7 +7,7 @@ import net.minecraftforge.common.BiomeManager;
 
 public class BiomeRegistry {
 
-	public static BiomeGenBase biomeWitherlands;
+	public static BiomeGenBase biomeWitherlands = new BiomeGenWitherlands(52);
 
 	public static void mainRegistry() {
 		registerBiome();
@@ -21,8 +21,6 @@ public class BiomeRegistry {
 	}
 
 	private static void initializeBiome() {
-		biomeWitherlands = new BiomeGenWitherlands(52)
-				.setBiomeName("Witherlands").setTemperatureRainfall(0F, 0F)
-				.setColor(0x1f0000).setDisableRain();
+		biomeWitherlands = new BiomeGenWitherlands(52);
 	}
 }
