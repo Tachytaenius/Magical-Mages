@@ -13,8 +13,7 @@ public class RegisterEnemyEntities {
 
 	public static void registerEntity() {
 
-		createEntity(WitherGuardian.class, "Wither Guardian", 0x101010,
-				0x250000);
+		createEntity(WitherGuardian.class, "WitherGuardian", 0x101010, 0x250000);
 
 	}
 

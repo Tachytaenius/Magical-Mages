@@ -14,6 +14,12 @@ item.ninjaBody.name=Ninja Tunic
 item.ninjaLegs.name=Ninja Leggings
 item.ninjaBoots.name=Ninja Boots
 
+entity.WitherGuardian.name=Wither Guardian
+
 tile.witherCore.name=Wither Core
+tile.witherMoss.name=Wither Moss
+tile.witherRock.name=Witherrack
+
+generator.mage=Mage Testing
 
 itemGroup.tabMod=Magical Mages
