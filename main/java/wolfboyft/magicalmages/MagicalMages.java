@@ -1,5 +1,6 @@
 package wolfboyft.magicalmages;
 
+import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -11,6 +12,7 @@ import wolfboyft.magicalmages.init.MageBlocks;
 import wolfboyft.magicalmages.init.MageItems;
 import wolfboyft.magicalmages.misc.EventHooks;
 import wolfboyft.magicalmages.proxy.CommonProxy;
+import wolfboyft.magicalmages.world.WorldTypeMage;
 import wolfboyft.magicalmages.world.biome.witherlands.BiomeRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
@@ -39,9 +41,11 @@ public class MagicalMages {
 	public void Init(FMLInitializationEvent event) {
 		proxy.registerRenders();
 		BiomeRegistry.mainRegistry();
+		final WorldType MAGE = new WorldTypeMage("mage");
 	}
 
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event) {
+
 	}
 }
