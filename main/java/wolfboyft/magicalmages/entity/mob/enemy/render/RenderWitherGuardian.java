@@ -1,6 +1,5 @@
 package wolfboyft.magicalmages.entity.mob.enemy.render;
 
-import net.minecraft.client.model.ModelGuardian;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
@@ -20,6 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 import wolfboyft.magicalmages.entity.mob.enemy.actual.WitherGuardian;
+import wolfboyft.magicalmages.entity.mob.enemy.model.ModelWitherGuardian;
 
 @SideOnly(Side.CLIENT)
 public class RenderWitherGuardian extends RenderLiving {
@@ -32,8 +32,9 @@ public class RenderWitherGuardian extends RenderLiving {
 	int field_177115_a;
 
 	public RenderWitherGuardian(RenderManager p_i46171_1_) {
-		super(p_i46171_1_, new ModelGuardian(), 0.5F);
-		this.field_177115_a = ((ModelGuardian) this.mainModel).func_178706_a();
+		super(p_i46171_1_, new ModelWitherGuardian(), 0.5F);
+		this.field_177115_a = ((ModelWitherGuardian) this.mainModel)
+				.func_178706_a();
 	}
 
 	public boolean shouldRenderGuardian(WitherGuardian entity,
@@ -82,10 +83,10 @@ public class RenderWitherGuardian extends RenderLiving {
 	public void func_177109_a(WitherGuardian p_177109_1_, double p_177109_2_,
 			double p_177109_4_, double p_177109_6_, float p_177109_8_,
 			float p_177109_9_) {
-		if (this.field_177115_a != ((ModelGuardian) this.mainModel)
+		if (this.field_177115_a != ((ModelWitherGuardian) this.mainModel)
 				.func_178706_a()) {
-			this.mainModel = new ModelGuardian();
-			this.field_177115_a = ((ModelGuardian) this.mainModel)
+			this.mainModel = new ModelWitherGuardian();
+			this.field_177115_a = ((ModelWitherGuardian) this.mainModel)
 					.func_178706_a();
 		}
 
