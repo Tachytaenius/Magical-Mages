@@ -1,7 +1,10 @@
 package wolfboyft.magicalmages.proxy;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import wolfboyft.magicalmages.entity.mob.enemy.actual.WitherGuardian;
+import wolfboyft.magicalmages.entity.mob.enemy.render.RenderWitherGuardian;
 import wolfboyft.magicalmages.entity.projectile.actual.Kunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicKunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicShuriken;
@@ -38,6 +41,9 @@ public class ClientProxy extends CommonProxy {
 				new RenderBaseProjectile(new ResourceLocation(
 						"magicalmages:textures/misc/magicKunai.png"), 4F, 1F,
 						1F, 1F));
+		RenderingRegistry.registerEntityRenderingHandler(WitherGuardian.class,
+				new RenderWitherGuardian(Minecraft.getMinecraft()
+						.getRenderManager()));
 	}
 
 }
