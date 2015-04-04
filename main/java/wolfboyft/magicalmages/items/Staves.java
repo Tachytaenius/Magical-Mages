@@ -1,10 +1,6 @@
 package wolfboyft.magicalmages.items;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
 import wolfboyft.magicalmages.entity.projectile.actual.BaseProjectile;
@@ -26,22 +22,5 @@ public class Staves extends Item {
 		setCreativeTab(MagicalMages.tabMod);
 		setMaxDamage(uses);
 		GameRegistry.registerItem(this, name);
-	}
-
-	@Override
-	public ItemStack onItemRightClick(ItemStack stack, World world,
-			EntityPlayer player) {
-		player.swingItem();
-		player.setItemInUse(stack, 3);
-		try {
-			world.spawnEntityInWorld(projectile.getConstructor(World.class,
-					EntityLivingBase.class, float.class).newInstance(world,
-					player, damage));
-			stack.damageItem(1, player);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return stack;
 	}
 }

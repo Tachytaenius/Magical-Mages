@@ -14,6 +14,7 @@ import wolfboyft.magicalmages.entity.projectile.actual.MagicShuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.Shuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.WitherBolt;
 import wolfboyft.magicalmages.items.Pearl;
+import wolfboyft.magicalmages.items.SpecialStaff_Cure;
 import wolfboyft.magicalmages.items.Staves;
 import wolfboyft.magicalmages.items.ThrowableWeapon;
 import wolfboyft.magicalmages.misc.EnumArmour;
@@ -43,6 +44,7 @@ public class MageItems {
 	public static Item ninjaBoots;
 	public static final Item farlander_pearl = new Pearl().setUnlocalizedName(
 			"farlander_pearl").setCreativeTab(MagicalMages.tabMod);
+	public static final Item staffCure = new SpecialStaff_Cure("staffCure");
 
 	public static void init() {
 		int HEAD = Armours.HEAD;

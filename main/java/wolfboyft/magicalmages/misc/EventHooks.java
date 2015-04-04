@@ -2,10 +2,12 @@ package wolfboyft.magicalmages.misc;
 
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.player.EntityInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import wolfboyft.magicalmages.entity.mob.enemy.actual.WitherGuardian;
 import wolfboyft.magicalmages.init.MageItems;
@@ -56,6 +58,23 @@ public class EventHooks {
 					event.entityLiving.posX, event.entityLiving.posY,
 					event.entityLiving.posZ, new ItemStack(Blocks.prismarine,
 							2, 2)));
+		}
+	}
+
+	@SubscribeEvent
+	public void onEntityRightClicked(EntityInteractEvent event) {
+		ItemStack itemstack = event.entityPlayer.inventory.getCurrentItem();
+
+		if (event.target instanceof EntityZombie) {
+			if (itemstack != null) {
+				if (itemstack == new ItemStack(MageItems.staffCure)) {
+					if (event.target instanceof EntityZombie) {
+						final EntityZombie zombie = (EntityZombie) event.entity;
+						if (zombie.isVillager()) {
+						}
+					}
+				}
+			}
 		}
 	}
 }
