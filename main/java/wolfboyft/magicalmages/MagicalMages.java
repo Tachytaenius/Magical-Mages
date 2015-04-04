@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import wolfboyft.magicalmages.entity.mob.enemy.RegisterEnemyEntities;
+import wolfboyft.magicalmages.entity.mob.passive.RegisterPassiveEntities;
 import wolfboyft.magicalmages.init.MageBlocks;
 import wolfboyft.magicalmages.init.MageItems;
 import wolfboyft.magicalmages.misc.EventHooks;
@@ -37,6 +38,7 @@ public class MagicalMages {
 		MinecraftForge.EVENT_BUS.register(eventhooksVar);
 		MinecraftForge.TERRAIN_GEN_BUS.register(eventhooksVar);
 		RegisterEnemyEntities.mainRegistry();
+		RegisterPassiveEntities.mainRegistry();
 	}
 
 	@EventHandler
