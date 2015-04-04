@@ -27,7 +27,6 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -39,6 +38,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import wolfboyft.magicalmages.init.MageItems;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Sets;
@@ -308,7 +308,7 @@ public class Farlanderman extends EntityMob {
 	}
 
 	protected Item getDropItem() {
-		return Items.ender_pearl;
+		return MageItems.farlander_pearl;
 	}
 
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {

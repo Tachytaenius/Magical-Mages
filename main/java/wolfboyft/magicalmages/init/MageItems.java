@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemEnderPearl;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
@@ -40,6 +41,7 @@ public class MageItems {
 	public static Item ninjaChest;
 	public static Item ninjaLegs;
 	public static Item ninjaBoots;
+	public static final Item farlander_pearl = new ItemEnderPearl();
 
 	public static void init() {
 		int HEAD = Armours.HEAD;
