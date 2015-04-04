@@ -21,7 +21,7 @@ public class BiomeRegistry {
 	}
 
 	private static void initializeBiome() {
-		biomeWitherlands = new BiomeGenWitherlands(52)
-				.setBiomeName("Witherlands");
+		biomeWitherlands = new BiomeGenWitherlands(52).setBiomeName(
+				"Witherlands").setDisableRain();
 	}
 }

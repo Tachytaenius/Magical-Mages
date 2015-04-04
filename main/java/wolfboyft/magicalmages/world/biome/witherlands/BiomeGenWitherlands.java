@@ -43,4 +43,8 @@ public class BiomeGenWitherlands extends BiomeGenBase implements
 	public int getSkyColorByTemp(float par1) {
 		return 0x900000;
 	}
+
+	public int getBiomeGrassColor(float par1) {
+		return 0x900000;
+	}
 }
