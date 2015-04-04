@@ -296,11 +296,11 @@ public class Farlanderman extends EntityMob {
 	}
 
 	protected String getLivingSound() {
-		return this.isScreaming() ? "mob.endermen.scream" : "mob.zombie.idle";
+		return this.isScreaming() ? "mob.endermen.scream" : "mob.zombie.say";
 	}
 
 	protected String getHurtSound() {
-		return "mob.zombie.hit";
+		return "mob.zombie.hurt";
 	}
 
 	protected String getDeathSound() {
