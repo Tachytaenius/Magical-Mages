@@ -47,6 +47,8 @@ public class Shuriken extends BaseProjectile {
 				var1.entityHit.attackEntityFrom(
 						DamageSource.causeThrownDamage(this, getThrower()),
 						getDamage());
+				this.setDead();
+				worldObj.removeEntity(this);
 				if (!worldObj.isRemote) {
 					this.setDead();
 				}

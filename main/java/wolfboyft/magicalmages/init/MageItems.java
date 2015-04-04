@@ -4,7 +4,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemEnderPearl;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
@@ -14,6 +13,7 @@ import wolfboyft.magicalmages.entity.projectile.actual.MagicKunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicShuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.Shuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.WitherBolt;
+import wolfboyft.magicalmages.items.Pearl;
 import wolfboyft.magicalmages.items.Staves;
 import wolfboyft.magicalmages.items.ThrowableWeapon;
 import wolfboyft.magicalmages.misc.EnumArmour;
@@ -41,7 +41,8 @@ public class MageItems {
 	public static Item ninjaChest;
 	public static Item ninjaLegs;
 	public static Item ninjaBoots;
-	public static final Item farlander_pearl = new ItemEnderPearl();
+	public static final Item farlander_pearl = new Pearl().setUnlocalizedName(
+			"farlander_pearl").setCreativeTab(MagicalMages.tabMod);
 
 	public static void init() {
 		int HEAD = Armours.HEAD;
@@ -80,6 +81,8 @@ public class MageItems {
 				"A A", 'A', witherBone, 'B', Items.nether_star);
 		GameRegistry.addRecipe(new ItemStack(witherBoots, 1), "ABA", "A A",
 				'A', witherBone, 'B', Items.nether_star);
+		GameRegistry.registerItem(farlander_pearl,
+				farlander_pearl.getUnlocalizedName());
 	}
 
 	public static void registerRenders() {
@@ -98,6 +101,7 @@ public class MageItems {
 		registerRender(ninjaChest);
 		registerRender(ninjaLegs);
 		registerRender(ninjaBoots);
+		registerRender(farlander_pearl);
 	}
 
 	public static void registerRender(Item item) {
