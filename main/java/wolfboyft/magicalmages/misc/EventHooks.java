@@ -71,6 +71,8 @@ public class EventHooks {
 					if (event.target instanceof EntityZombie) {
 						final EntityZombie zombie = (EntityZombie) event.entity;
 						if (zombie.isVillager()) {
+							// Find out how to change his ConversionTime NBT to
+							// what you wanted it to be!
 						}
 					}
 				}
