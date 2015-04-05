@@ -66,7 +66,11 @@ public class EventHooks {
 		ItemStack itemstack = event.entityPlayer.inventory.getCurrentItem();
 
 		if (event.target instanceof EntityZombie) {
-			System.out.println("Lolcats.");
+			if (itemstack != null) {
+				if (itemstack.equals(MageItems.staffCure)) {
+					System.out.println("Magical Mages FTW!");
+				}
+			}
 		}
 	}
 }
