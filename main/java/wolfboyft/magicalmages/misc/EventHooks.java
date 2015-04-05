@@ -67,8 +67,11 @@ public class EventHooks {
 
 		if (event.target instanceof EntityZombie) {
 			if (itemstack != null) {
-				if (itemstack.equals(MageItems.staffCure)) {
-					System.out.println("Magical Mages FTW!");
+				if (event.entityPlayer.inventory.getCurrentItem().getItem() == MageItems.staffCure) {
+					final EntityZombie zombie = (EntityZombie) event.target;
+					if (zombie.isVillager()) {
+						zombie.getEntityData().setInteger("ConversionTime", 5);
+					}
 				}
 			}
 		}
