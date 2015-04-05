@@ -44,7 +44,7 @@ public class MageItems {
 	public static Item ninjaBoots;
 	public static final Item farlander_pearl = new Pearl().setUnlocalizedName(
 			"farlander_pearl").setCreativeTab(MagicalMages.tabMod);
-	public static final Item staffCure = new SpecialStaff_Cure("staffCure");
+	public static final Item staffCure = new SpecialStaff_Cure("staffCure", 100);
 
 	public static void init() {
 		int HEAD = Armours.HEAD;
@@ -104,6 +104,7 @@ public class MageItems {
 		registerRender(ninjaLegs);
 		registerRender(ninjaBoots);
 		registerRender(farlander_pearl);
+		registerRender(staffCure);
 	}
 
 	public static void registerRender(Item item) {

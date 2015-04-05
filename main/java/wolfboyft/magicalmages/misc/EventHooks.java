@@ -66,17 +66,7 @@ public class EventHooks {
 		ItemStack itemstack = event.entityPlayer.inventory.getCurrentItem();
 
 		if (event.target instanceof EntityZombie) {
-			if (itemstack != null) {
-				if (itemstack == new ItemStack(MageItems.staffCure)) {
-					if (event.target instanceof EntityZombie) {
-						final EntityZombie zombie = (EntityZombie) event.entity;
-						if (zombie.isVillager()) {
-							// Find out how to change his ConversionTime NBT to
-							// what you wanted it to be!
-						}
-					}
-				}
-			}
+			System.out.println("Lolcats.");
 		}
 	}
 }
