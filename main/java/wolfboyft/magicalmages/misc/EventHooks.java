@@ -1,14 +1,11 @@
 package wolfboyft.magicalmages.misc;
 
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.EntityInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -16,6 +13,8 @@ import wolfboyft.magicalmages.entity.mob.enemy.actual.WitherGuardian;
 import wolfboyft.magicalmages.init.MageItems;
 
 public class EventHooks {
+	private int conversionTime;
+
 	@SubscribeEvent
 	public void LivingDropEvent(LivingDropsEvent event) {
 		if (event.entity instanceof EntityWither) {
@@ -69,19 +68,13 @@ public class EventHooks {
 				if (event.entityPlayer.inventory.getCurrentItem().getItem() == MageItems.staffCure) {
 					final EntityZombie zombie = (EntityZombie) event.target;
 					if (zombie.isVillager()) {
-
+						this.conversionTime = 5;
+						zombie.getDataWatcher().updateObject(14,
+								Byte.valueOf((byte) 1));
+						zombie.worldObj.setEntityState(zombie, (byte) 16);
 					}
 				}
 			}
 		}
 	}
-
-	@SubscribeEvent
-	public void LivingDeathEvent(EntityLivingBase entity, DamageSource source) {
-		if (entity instanceof EntityVillager
-				&& source.getEntity() instanceof EntityZombie) {
-
-		}
-	}
-
 }
