@@ -52,10 +52,6 @@ public class EventHooks {
 							MageItems.witherBone, 13)));
 			event.drops.add(new EntityItem(event.entityLiving.worldObj,
 					event.entityLiving.posX, event.entityLiving.posY,
-					event.entityLiving.posZ, new ItemStack(MageItems.witherRib,
-							6)));
-			event.drops.add(new EntityItem(event.entityLiving.worldObj,
-					event.entityLiving.posX, event.entityLiving.posY,
 					event.entityLiving.posZ, new ItemStack(Blocks.prismarine,
 							2, 2)));
 		}
