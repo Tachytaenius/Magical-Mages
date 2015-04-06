@@ -51,7 +51,7 @@ public class MageItems {
 	public static final Item staffCure = new SpecialStaff_Cure("staffCure", 100);
 
 	public static ToolMaterial god = EnumHelper.addToolMaterial("GodMaterial",
-			100, 1000000, 5, 50, 5245);
+			100, -1, 5, 50, 5245);
 
 	public static final Item excalibur = new AdvancedSword(god, "excalibur",
 			ExcaliburBeam.class, true, true);

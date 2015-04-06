@@ -58,61 +58,43 @@ public class ExcaliburBeam extends BaseProjectile {
 								var1.entityHit.worldObj, var1.entityHit.posX,
 								var1.entityHit.posY, var1.entityHit.posZ));
 				worldObj.createExplosion(this, posX, posY, posZ, 0.0F, true);
-				if (!worldObj.isRemote) {
-					var1.entityHit.attackEntityFrom(
-							DamageSource.causeThrownDamage(this, getThrower()),
-							getDamage());
-					this.setDead();
-					((EntityLivingBase) var1.entityHit)
-							.addPotionEffect(new PotionEffect(Potion.wither.id,
-									200));
-					var1.entityHit.worldObj
-							.spawnEntityInWorld(new EntityLightningBolt(
-									var1.entityHit.worldObj,
-									var1.entityHit.posX, var1.entityHit.posY,
-									var1.entityHit.posZ));
-					worldObj.createExplosion(this, posX, posY, posZ, 0.0F, true);
-				}
 			}
 		}
 
 		if (var1.typeOfHit.BLOCK != null) {
 			this.setDead();
-			var1.entityHit.worldObj.spawnEntityInWorld(new EntityLightningBolt(
-					var1.entityHit.worldObj, var1.entityHit.posX,
-					var1.entityHit.posY, var1.entityHit.posZ));
+			this.playSound("random.anvil_land", 0.5F, 0.5F);
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.excalibur) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.excalibur) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.excalibur) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.excalibur) });
+			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
+					this.posX, this.posY, this.posZ,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
+					new int[] { Item.getIdFromItem(MageItems.excalibur) });
 			worldObj.createExplosion(this, posX, posY, posZ, 0.0F, true);
-			this.playSound("mob.guardian.flop", 1, 2);
-			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
-					this.posX, this.posY, this.posZ,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					new int[] { Item.getIdFromItem(MageItems.excalibur) });
-			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
-					this.posX, this.posY, this.posZ,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					new int[] { Item.getIdFromItem(MageItems.excalibur) });
-			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
-					this.posX, this.posY, this.posZ,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					new int[] { Item.getIdFromItem(MageItems.excalibur) });
-			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
-					this.posX, this.posY, this.posZ,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					new int[] { Item.getIdFromItem(MageItems.excalibur) });
-			this.worldObj.spawnParticle(EnumParticleTypes.ITEM_CRACK,
-					this.posX, this.posY, this.posZ,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					((double) this.rand.nextFloat() - 0.5D) * 0.08D,
-					new int[] { Item.getIdFromItem(MageItems.excalibur) });
 		}
 	}
 

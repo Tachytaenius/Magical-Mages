@@ -43,7 +43,7 @@ public class AdvancedSword extends ItemSword {
 					player, damage));
 			if (!(player.capabilities.isCreativeMode)) {
 				if (unbreakable != true) {
-					stack.damageItem(2, player);
+					stack.damageItem(1, player);
 				}
 			}
 		} catch (Exception e) {

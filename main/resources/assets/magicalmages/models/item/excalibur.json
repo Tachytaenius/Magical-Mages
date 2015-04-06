@@ -1,0 +1,18 @@
+{
+    "parent": "builtin/generated",
+    "textures": {
+        "layer0": "magicalmages:item/excalibur"
+    },
+   "display": {
+  "thirdperson":{
+    "rotation": [180, 90, 300],
+    "translation": [-0.25, 2.50, -8.75],
+    "scale": [2.75, 2.75, 2.75]
+  },
+  "firstperson":{
+    "rotation": [0, 46, 68],
+    "translation": [-1.00, 3.50, 0.00],
+    "scale": [2.75, 2.75, 1.50]
+  }
+}
+}
