@@ -68,7 +68,6 @@ public class EventHooks {
 				if (event.entityPlayer.inventory.getCurrentItem().getItem() == MageItems.staffCure) {
 					final EntityZombie zombie = (EntityZombie) event.target;
 					if (zombie.isVillager()) {
-						this.conversionTime = 5;
 						zombie.getDataWatcher().updateObject(14,
 								Byte.valueOf((byte) 1));
 						zombie.worldObj.setEntityState(zombie, (byte) 16);
