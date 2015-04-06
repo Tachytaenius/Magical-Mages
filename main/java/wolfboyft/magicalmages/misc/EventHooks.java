@@ -1,5 +1,6 @@
 package wolfboyft.magicalmages.misc;
 
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityZombie;
@@ -56,6 +57,12 @@ public class EventHooks {
 					event.entityLiving.posX, event.entityLiving.posY,
 					event.entityLiving.posZ, new ItemStack(Blocks.prismarine,
 							2, 2)));
+		}
+		if (event.entity instanceof EntityDragon) {
+			event.drops.add(new EntityItem(event.entityLiving.worldObj,
+					event.entityLiving.posX, event.entityLiving.posY,
+					event.entityLiving.posZ, new ItemStack(MageItems.excalibur,
+							1)));
 		}
 	}
 

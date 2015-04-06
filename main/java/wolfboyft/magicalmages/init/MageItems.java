@@ -4,15 +4,19 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import wolfboyft.magicalmages.MagicalMages;
 import wolfboyft.magicalmages.Reference;
+import wolfboyft.magicalmages.entity.projectile.actual.ExcaliburBeam;
 import wolfboyft.magicalmages.entity.projectile.actual.Kunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicKunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicShuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.Shuriken;
 import wolfboyft.magicalmages.entity.projectile.actual.WitherBolt;
+import wolfboyft.magicalmages.items.AdvancedSword;
 import wolfboyft.magicalmages.items.Pearl;
 import wolfboyft.magicalmages.items.SpecialStaff_Cure;
 import wolfboyft.magicalmages.items.Staves;
@@ -45,6 +49,12 @@ public class MageItems {
 	public static final Item farlander_pearl = new Pearl().setUnlocalizedName(
 			"farlander_pearl").setCreativeTab(MagicalMages.tabMod);
 	public static final Item staffCure = new SpecialStaff_Cure("staffCure", 100);
+
+	public static ToolMaterial god = EnumHelper.addToolMaterial("GodMaterial",
+			100, 1000000, 5, 50, 5245);
+
+	public static final Item excalibur = new AdvancedSword(god, "excalibur",
+			ExcaliburBeam.class, true, true);
 
 	public static void init() {
 		int HEAD = Armours.HEAD;
@@ -85,6 +95,8 @@ public class MageItems {
 				'A', witherBone, 'B', Items.nether_star);
 		GameRegistry.registerItem(farlander_pearl,
 				farlander_pearl.getUnlocalizedName());
+		GameRegistry.registerItem(excalibur, excalibur.getUnlocalizedName()
+				.substring(5));
 	}
 
 	public static void registerRenders() {
@@ -105,6 +117,7 @@ public class MageItems {
 		registerRender(ninjaBoots);
 		registerRender(farlander_pearl);
 		registerRender(staffCure);
+		registerRender(excalibur);
 	}
 
 	public static void registerRender(Item item) {
