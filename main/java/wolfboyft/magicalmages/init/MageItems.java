@@ -53,6 +53,9 @@ public class MageItems {
 	public static ToolMaterial god = EnumHelper.addToolMaterial("GodMaterial",
 			100, -1, 5, 50, 5245);
 
+	public static Item synthetic_leather = new Item().setUnlocalizedName(
+			"synthetic_leather").setCreativeTab(MagicalMages.tabMod);;
+
 	public static final Item excalibur = new AdvancedSword(god, "excalibur",
 			ExcaliburBeam.class, true, true);
 
@@ -76,6 +79,8 @@ public class MageItems {
 				.substring(5));
 		GameRegistry.registerItem(witherRib, witherRib.getUnlocalizedName()
 				.substring(5));
+		GameRegistry.registerItem(synthetic_leather, synthetic_leather
+				.getUnlocalizedName().substring(5));
 		GameRegistry.addRecipe(new ItemStack(staffWither, 1), "CBC", " A ",
 				" D ", 'A', witherBone, 'B', Items.nether_star, 'C', witherRib,
 				'D', new ItemStack(Items.skull, 1, 1));
@@ -118,6 +123,7 @@ public class MageItems {
 		registerRender(farlander_pearl);
 		registerRender(staffCure);
 		registerRender(excalibur);
+		registerRender(synthetic_leather);
 	}
 
 	public static void registerRender(Item item) {

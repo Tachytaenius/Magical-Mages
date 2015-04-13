@@ -1,5 +1,7 @@
 package wolfboyft.magicalmages;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -8,6 +10,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import wolfboyft.magicalmages.entity.mob.enemy.RegisterEnemyEntities;
 import wolfboyft.magicalmages.entity.mob.passive.RegisterPassiveEntities;
 import wolfboyft.magicalmages.init.MageBlocks;
@@ -22,7 +25,7 @@ public class MagicalMages {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	public static MagicalMages instance;
-	public static final ModTab tabMod = new ModTab("tabMod");
+	public static final ModTab tabMod = new ModTab("magesTabMod");
 	public static int dimensionId = 273;
 
 	EventHooks eventhooksVar = new EventHooks();
@@ -46,10 +49,23 @@ public class MagicalMages {
 		proxy.registerRenders();
 		BiomeRegistry.mainRegistry();
 		final WorldType MAGE = new WorldTypeMage("mage");
+		oreRegistration();
+		registerOreRecipes();
 	}
 
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event) {
 
 	}
+
+	public static void oreRegistration() {
+		OreDictionary.registerOre("leather", new ItemStack(
+				MageItems.synthetic_leather));
+		OreDictionary.registerOre("leather", new ItemStack(Items.leather));
+	}
+
+	private void registerOreRecipes() {
+
+	}
+
 }
