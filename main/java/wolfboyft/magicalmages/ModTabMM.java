@@ -4,9 +4,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import wolfboyft.magicalmages.init.MageItems;
 
-public class ModTab extends CreativeTabs {
+public class ModTabMM extends CreativeTabs {
 
-	public ModTab(String label) {
+	public ModTabMM(String label) {
 		super(label);
 	}
 

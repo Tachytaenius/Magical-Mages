@@ -12,7 +12,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import wolfboyft.magicalmages.entity.mob.enemy.RegisterEnemyEntities;
-import wolfboyft.magicalmages.entity.mob.passive.RegisterPassiveEntities;
 import wolfboyft.magicalmages.init.MageBlocks;
 import wolfboyft.magicalmages.init.MageItems;
 import wolfboyft.magicalmages.misc.EventHooks;
@@ -25,8 +24,7 @@ public class MagicalMages {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	public static MagicalMages instance;
-	public static final ModTab tabMod = new ModTab("magesTabMod");
-	public static int dimensionId = 273;
+	public static final ModTabMM tabModMM = new ModTabMM("magestabModMM");
 
 	EventHooks eventhooksVar = new EventHooks();
 
@@ -41,7 +39,6 @@ public class MagicalMages {
 		MinecraftForge.EVENT_BUS.register(eventhooksVar);
 		MinecraftForge.TERRAIN_GEN_BUS.register(eventhooksVar);
 		RegisterEnemyEntities.mainRegistry();
-		RegisterPassiveEntities.mainRegistry();
 	}
 
 	@EventHandler
@@ -59,9 +56,6 @@ public class MagicalMages {
 	}
 
 	public static void oreRegistration() {
-		OreDictionary.registerOre("leather", new ItemStack(
-				MageItems.synthetic_leather));
-		OreDictionary.registerOre("leather", new ItemStack(Items.leather));
 	}
 
 	private void registerOreRecipes() {

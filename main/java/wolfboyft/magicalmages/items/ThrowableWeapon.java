@@ -22,8 +22,8 @@ public class ThrowableWeapon extends Item {
 		this.projectile = projectile;
 		damage = dam;
 		setUnlocalizedName(name);
-		setMaxStackSize(1);
-		setCreativeTab(MagicalMages.tabMod);
+		setMaxStackSize(32);
+		setCreativeTab(MagicalMages.tabModMM);
 		GameRegistry.registerItem(this, name);
 	}
 

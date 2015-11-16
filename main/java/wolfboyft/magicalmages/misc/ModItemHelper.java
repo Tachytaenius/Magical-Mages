@@ -17,7 +17,7 @@ public class ModItemHelper extends Item {
 	protected int healAmount = 0;
 
 	public ModItemHelper(String name) {
-		this(name, MagicalMages.tabMod);
+		this(name, MagicalMages.tabModMM);
 	}
 
 	public ModItemHelper(String name, CreativeTabs tab) {

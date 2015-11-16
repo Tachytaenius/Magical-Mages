@@ -23,7 +23,7 @@ public class Staves extends Item {
 		damage = dam;
 		setUnlocalizedName(name);
 		setMaxStackSize(1);
-		setCreativeTab(MagicalMages.tabMod);
+		setCreativeTab(MagicalMages.tabModMM);
 		setMaxDamage(uses);
 		GameRegistry.registerItem(this, name);
 	}

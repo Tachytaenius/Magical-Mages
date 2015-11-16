@@ -9,10 +9,10 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 public enum EnumArmour {
 
 	WITHER(ModItemHelper.addArmorMaterial("wither", 1000, new int[] { 4, 8, 6,
-			4 }, 20), "wither", false, 80, Items.nether_star),
+			4 }, 20), "wither", false, 75, Items.nether_star),
 
 	NINJA(ModItemHelper.addArmorMaterial("ninja", 250,
-			new int[] { 2, 4, 3, 2 }, 20), "ninja", false, 100, Blocks.wool);
+			new int[] { 2, 4, 3, 2 }, 20), "ninja", false, 35, Blocks.wool);
 
 	private ArmorMaterial armorMaterial;
 	private String type;

@@ -13,6 +13,7 @@ item.ninjaHelmet.name=Ninja Mask
 item.ninjaBody.name=Ninja Tunic
 item.ninjaLegs.name=Ninja Leggings
 item.ninjaBoots.name=Ninja Boots
+item.excalibur.name=Excalibur
 
 entity.WitherGuardian.name=Wither Guardian
 
@@ -22,4 +23,4 @@ tile.witherRock.name=Witherrack
 
 generator.mage=Mage Testing
 
-itemGroup.tabMod=Magical Mages
+itemGroup.magestabModMM=Magical Mages

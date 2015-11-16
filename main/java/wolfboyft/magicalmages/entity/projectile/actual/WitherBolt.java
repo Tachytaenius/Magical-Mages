@@ -58,6 +58,6 @@ public class WitherBolt extends BaseProjectile {
 
 	@Override
 	protected float getGravityVelocity() {
-		return 0.2F;
+		return 0.3F;
 	}
 }

@@ -27,7 +27,7 @@ public class AdvancedSword extends ItemSword {
 		this.projectile = projectile;
 		this.maxStackSize = 1;
 		this.setMaxDamage(material.getMaxUses());
-		this.setCreativeTab(MagicalMages.tabMod);
+		this.setCreativeTab(MagicalMages.tabModMM);
 		this.attackDamage = 4.0F + material.getDamageVsEntity();
 		GameRegistry.registerItem(this, name);
 		setUnlocalizedName(name);

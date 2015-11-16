@@ -1,5 +1,6 @@
 package wolfboyft.magicalmages.misc;
 
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityZombie;
@@ -55,23 +56,7 @@ public class EventHooks {
 			event.drops.add(new EntityItem(event.entityLiving.worldObj,
 					event.entityLiving.posX, event.entityLiving.posY,
 					event.entityLiving.posZ, new ItemStack(Blocks.prismarine,
-							2, 2)));
-		}
-	}
-
-	@SubscribeEvent
-	public void onEntityRightClicked(EntityInteractEvent event) {
-		ItemStack itemstack = event.entityPlayer.inventory.getCurrentItem();
-
-		if (event.target instanceof EntityZombie) {
-			if (itemstack != null) {
-				if (event.entityPlayer.inventory.getCurrentItem().getItem() == MageItems.staffCure) {
-					final EntityZombie zombie = (EntityZombie) event.target;
-					if (zombie.isVillager()) {
-
-					}
-				}
-			}
+							32, 2)));
 		}
 	}
 }

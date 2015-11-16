@@ -22,11 +22,11 @@ public class MageBlocks {
 
 	public static void init() {
 		witherCore = new WitherCore(Material.iron).setUnlocalizedName(
-				"witherCore").setCreativeTab(MagicalMages.tabMod);
+				"witherCore").setCreativeTab(MagicalMages.tabModMM);
 		witherMoss = new WitherMoss(Material.grass).setUnlocalizedName(
-				"witherMoss").setCreativeTab(MagicalMages.tabMod);
+				"witherMoss").setCreativeTab(MagicalMages.tabModMM);
 		witherRock = new WitherRock(Material.rock).setUnlocalizedName(
-				"witherRock").setCreativeTab(MagicalMages.tabMod);
+				"witherRock").setCreativeTab(MagicalMages.tabModMM);
 	}
 
 	public static void register() {

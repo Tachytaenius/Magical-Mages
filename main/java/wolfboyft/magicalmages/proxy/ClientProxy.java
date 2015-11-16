@@ -5,8 +5,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import wolfboyft.magicalmages.entity.mob.enemy.actual.WitherGuardian;
 import wolfboyft.magicalmages.entity.mob.enemy.render.RenderWitherGuardian;
-import wolfboyft.magicalmages.entity.mob.passive.actual.Farlanderman;
-import wolfboyft.magicalmages.entity.mob.passive.render.RenderFarlanderman;
 import wolfboyft.magicalmages.entity.projectile.actual.ExcaliburBeam;
 import wolfboyft.magicalmages.entity.projectile.actual.Kunai;
 import wolfboyft.magicalmages.entity.projectile.actual.MagicKunai;
@@ -50,9 +48,6 @@ public class ClientProxy extends CommonProxy {
 						1F, 1F, 1F));
 		RenderingRegistry.registerEntityRenderingHandler(WitherGuardian.class,
 				new RenderWitherGuardian(Minecraft.getMinecraft()
-						.getRenderManager()));
-		RenderingRegistry.registerEntityRenderingHandler(Farlanderman.class,
-				new RenderFarlanderman(Minecraft.getMinecraft()
 						.getRenderManager()));
 	}
 

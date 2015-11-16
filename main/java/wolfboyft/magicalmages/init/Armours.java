@@ -40,7 +40,7 @@ public class Armours extends ItemArmor implements ISpecialArmor {
 		else if (armorType == 3)
 			damageReduction = ((((double) fullReduction) / 24) * 4) / 100;
 		this.unbreakable = armorMaterial.isUndamageable();
-		setCreativeTab(MagicalMages.tabMod);
+		setCreativeTab(MagicalMages.tabModMM);
 		setArmorType(name, armorType);
 		setUnlocalizedName(this.name);
 		GameRegistry.registerItem(this, this.name);
